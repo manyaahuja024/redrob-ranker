@@ -1,0 +1,59 @@
+# Redrob Hackathon — Submission Metadata
+
+team_name: "AccessOn"  
+
+primary_contact:
+  name: "Manya Ahuja"
+  email: "ahujamanya024@gmai.com"   
+  phone: "+91-9990009880"       
+
+team_members:
+  - name: "Manya Ahuja"
+    email: "ahujamanya024@gmail.com"
+    role: "Team Lead"          
+  
+github_repo: "https://github.com/manyaahuja024/redrob-ranker"
+
+sandbox_link: "https://colab.research.google.com/drive/10RMbcwsNUntYYAPYeuFLL4mK3Nz8eWhk?usp=sharing"
+
+reproduce_command: "python ranker.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Windows 11 Laptop"
+  cpu_cores: 8                
+  ram_gb: 16
+  python_version: "3.13.3"       
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "ChatGPT"
+
+ai_usage_summary: |
+  ChatGPT was used as a development assistant for discussing the ranking pipeline,
+  debugging Python issues, and improving project documentation. No external APIs or online services are used during ranking.
+  Candidate ranking is performed entirely by locally executed Python code.
+
+methodology_summary: |
+  The ranking system combines multiple complementary signals instead of relying
+  solely on keyword matching. A rule-based scoring module evaluates candidate
+  titles, experience, skills, industries, profile summaries, and career history
+  against the job description. Behavioral signals such as recruiter response
+  rate, interview completion rate, open-to-work status, recruiter saves, and
+  notice period are incorporated to prioritize candidates who are both relevant
+  and available. Candidate profiles are further matched to the job description
+  using BM25 lexical retrieval and TF-IDF cosine similarity. A lightweight
+  honeypot detector penalizes profiles with unrealistic skill-duration and
+  proficiency combinations to reduce false positives. The final score is a
+  weighted combination of these components, producing the top 100 candidates
+  together with human-readable reasoning for each recommendation.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
