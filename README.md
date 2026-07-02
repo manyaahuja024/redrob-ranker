@@ -31,6 +31,18 @@ The pipeline ranks candidates for the supplied job description and generates the
 ```
 
 ---
+## Dataset
+
+The full `candidates.jsonl` dataset is not included in this repository because it exceeds GitHub's 100 MB file size limit.
+
+The ranking script expects the official challenge dataset to be provided locally.
+
+Example:
+
+python ranker.py \
+    --candidates candidates.jsonl \
+    --job job_description.docx \
+    --out submission.csv
 
 # Installation
 
